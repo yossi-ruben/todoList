@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Welcome to Panda Land</h3>
+  <div class="left">
+    <img src="https://lh6.ggpht.com/X9OG3iLeu8W9mrfnVF109EmhhEcVf7ZOKg0i6rl_TNqmihxfwlsoJLRqpWEcVDCNnQ=h400" alt="pandas" />
+  </div>
+    <h3>Create a new Panda</h3>
+    <form id="new-panda-form" class="" action="/pandas" method="post">
+      <label for="panda_name">Name</label>
+      <input type="text" id="panda_name" name="panda[name]" value="">
+
+      <label for="home_town">Home Town <span>(*optional)</span></label>
+      <input type="text" id="home_town" name="panda[home_town]" >
+
+      <input type="submit" value="Add">
+    </form>
+  <div class="pandas">
+    <ul id="panda-list">
+      <% @pandas.each do |panda_li| %>
+        <%= erb :'/pandas/_panda_list_item', locals: {panda: panda_li} %>
+      <% end %>
+    </ul>
+  </div>
+</div>
